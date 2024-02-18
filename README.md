@@ -1,3 +1,5 @@
+<base target="_blank">
+
 # Proyecto ERP
 
 ## Módulo 01:
