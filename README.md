@@ -7,8 +7,6 @@
 - Pantalla inicial una vez realizada la autenticación y la autorización.
 ### 2. Librerías y Componentes Necesarios:
 - ***Docker*** --> Debe descargar e instalar el demonio de docker: <a href="https://www.docker.com/products/docker-desktop/" target="_blank">https://www.docker.com/products/docker-desktop/</a>
-
-
 - ***PostgreSQL*** --> Se necesita descargar e instalar un cliente de base de datos Postgres como:
 > - PgAdmin >> <a href="https://www.pgadmin.org/download/" target="_blank">https://www.pgadmin.org/download/</a><br>
 > - TablePlus >> <a href="https://tableplus.com/" target="_blank">https://tableplus.com/</a>
