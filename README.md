@@ -1,5 +1,3 @@
-<base target="_blank">
-
 # Proyecto ERP
 
 ## Módulo 01:
@@ -8,15 +6,16 @@
 - Gestión de usuarios (CRUD).
 - Pantalla inicial una vez realizada la autenticación y la autorización.
 ### 2. Librerías y Componentes Necesarios:
-- ***Docker*** --> Debe descargar e instalar el demonio de docker: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+- ***Docker*** --> Debe descargar e instalar el demonio de docker: <a href="https://www.docker.com/products/docker-desktop/" target="_blank">https://www.docker.com/products/docker-desktop/</a>
+
+
 - ***PostgreSQL*** --> Se necesita descargar e instalar un cliente de base de datos Postgres como:
-> - PgAdmin >> [https://www.pgadmin.org/download/](https://www.pgadmin.org/download/)<br>
-> - TablePlus >> [https://tableplus.com/](https://tableplus.com/)
-- ***Prisma DB*** --> Usaremos un cliente manejador de consultas para base de datos: [https://www.prisma.io/orm](https://www.prisma.io/orm)
+> - PgAdmin >> <a href="https://www.pgadmin.org/download/" target="_blank">https://www.pgadmin.org/download/</a><br>
+> - TablePlus >> <a href="https://tableplus.com/" target="_blank">https://tableplus.com/</a>
+- ***Prisma DB*** --> Usaremos un cliente manejador de consultas para base de datos: <a href="https://www.prisma.io/orm/" target="_blank">https://www.prisma.io/orm/</a>
+- ***NextAuth.js*** --> Librería para autenticación de usuarios provisto por Next: <a href="https://next-auth.js.org/getting-started/introduction" target="_blank">https://next-auth.js.org/getting-started/introduction</a>
 
-- ***NextAuth.js*** --> Librería para autenticación de usuarios provisto por Next: [https://next-auth.js.org/getting-started/introduction](https://next-auth.js.org/getting-started/introduction)
-
-- ***Tailwind CSS*** --> Librería CSS para desarrollar el layout y demás características UI de la app: [https://tailwindcss.com/docs/installation](https://tailwindcss.com/docs/installation)
+- ***Tailwind CSS*** --> Librería CSS para desarrollar el layout y demás características UI de la app: <a href="https://tailwindcss.com/docs/installation" target="_blank">https://tailwindcss.com/docs/installation</a>
 ### 3. Pasos para Levantar el Proyecto:
 #### 3.1 Clonar el repositorio:
 - Abra la terminal en la ruta donde instalará el proyecto.
@@ -59,4 +58,4 @@ npm run seed
 ```bash
 npm run dev
 ```
-### 4. Ingresa a la app [http://localhost:3000/](http://localhost:3000/)
+### 4. Ingresa a la app <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a>
