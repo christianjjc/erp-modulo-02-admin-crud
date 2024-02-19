@@ -56,12 +56,6 @@ docker compose up -d
 
 #### 3.6 Ejecutar los comandos de Prisma:
 
-- Iniciamos la librería prisma con la configuración para PostgreSQL.
-
-```bash
-npx prisma init
-```
-
 - Generar la base de datos según el esquema Prisma ubicado en el proyecto.
 
 ```bash
