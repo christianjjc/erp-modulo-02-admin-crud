@@ -28,7 +28,7 @@
 - Copie la siguiente instrucción y péguelo en la terminal que use (Gitbash, cmd, VsCode).
 
 ```bash
-git clone https://github.com/christianjjc/next-autenticacion.git
+git clone https://github.com/christianjjc/erp-modulo-01-autenticacion.git
 ```
 
 #### 3.2 Instalamos todas las dependencias del proyecto:
