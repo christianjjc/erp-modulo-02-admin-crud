@@ -1,9 +1,12 @@
 import { initialData } from './seed';
+import prisma from '../lib/prisma';
 
 async function main() {
+  await prisma.user.deleteMany();
+  const { users } = initialData;
   console.log(initialData);
-
-  console.log('seed correcto');
+  await prisma.user.createMany({ data: users });
+  console.log('Seed ejecutado satisfactoriamente');
 }
 
 (() => {
