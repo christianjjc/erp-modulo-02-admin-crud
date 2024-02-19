@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <>
       <header>LAyout Autenticacion</header>
-      <main>{children}</main>
+      <main className="flex justify-center">
+        <div className="w-full sm:w-[350px] px-10">{children}</div>
+      </main>
       <footer>Pie de pagina</footer>
     </>
   );
