@@ -16,11 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${globalFont.className} text-sm font-normal `}>
-        <header></header>
-        <main>{children}</main>
-        <footer></footer>
-      </body>
+      <body className={`${globalFont.className} text-sm font-normal `}>{children}</body>
     </html>
   );
 }

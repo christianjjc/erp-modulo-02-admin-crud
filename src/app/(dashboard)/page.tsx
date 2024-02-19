@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <section>
-      <p>Fuente Roboto</p>
+      <p>Dashboard</p>
     </section>
   );
 }
