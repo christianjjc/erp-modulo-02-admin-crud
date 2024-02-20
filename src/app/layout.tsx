@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { globalFont } from '@/config/fonts';
 import './globals.css';
+import { Providers } from '@/components';
 
 //const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${globalFont.className} text-sm font-normal `}>{children}</body>
+      <body className={`${globalFont.className} text-sm font-normal `}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,5 @@
 import { auth } from '@/auth.config';
-import { LogOutButton, Title } from '@/components/ui';
+import { LogOutButton, Title } from '@/components';
 import { redirect } from 'next/navigation';
 
 export default async function ProfilePage() {

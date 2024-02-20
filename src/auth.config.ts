@@ -4,11 +4,32 @@ import { z } from 'zod';
 import prisma from '@/lib/prisma';
 import bcryptjs from 'bcryptjs';
 
+let userToken: any;
+
 export const authConfig: NextAuthConfig = {
   pages: {
     signIn: '/auth/login',
     newUser: '/auth/new-account',
   },
+
+  //* Para expandir el objeto usuario y devuelva información adicional
+  callbacks: {
+    //* params desestructurado
+    jwt({ token, user }) {
+      if (user) {
+        token.data = user;
+      }
+      userToken = token.data;
+      //console.log({ userToken });
+      return token;
+    },
+    session({ session, token, user }) {
+      session.user = userToken;
+      //console.log({ session, trigger, newSession });
+      return session;
+    },
+  },
+
   providers: [
     Credentials({
       async authorize(credentials) {
