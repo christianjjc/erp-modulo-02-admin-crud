@@ -6,7 +6,7 @@
 
 ### 1. Secciones del Proyecto (Alcance):
 
-- Gestión de usuarios (CRUD).
+- Login y Registro de Usuarios.
 - Pantalla inicial una vez realizada la autenticación y la autorización.
 
 ### 2. Librerías y Componentes Necesarios:

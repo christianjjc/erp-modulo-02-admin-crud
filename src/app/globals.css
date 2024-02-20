@@ -71,3 +71,11 @@ body {
 .pie-pagina span {
   margin-left: 4px;
 }
+
+.btn-disabled {
+  @apply bg-gray-600 hover:bg-gray-600 text-white py-2 px-4 rounded transition-all;
+}
+
+.btn-delete {
+  @apply bg-red-600 hover:bg-red-800 text-white py-2 px-4 rounded-b transition-all;
+}
