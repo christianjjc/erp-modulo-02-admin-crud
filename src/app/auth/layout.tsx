@@ -16,6 +16,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const session = await auth();
 
   if (session?.user) {
+    //redirect('/auth/login');
     redirect('/');
   }
 

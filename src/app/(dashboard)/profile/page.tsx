@@ -13,8 +13,6 @@ export default async function ProfilePage() {
     <section>
       <Title title="Perfil de Usuario" />
       <pre>{JSON.stringify(session.user, null, 2)}</pre>
-      <br />
-      <LogOutButton />
     </section>
   );
 }

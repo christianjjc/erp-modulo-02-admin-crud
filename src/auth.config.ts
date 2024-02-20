@@ -28,6 +28,19 @@ export const authConfig: NextAuthConfig = {
       //console.log({ session, trigger, newSession });
       return session;
     },
+
+    authorized({ auth, request: { nextUrl } }) {
+      console.log({ middleware: auth });
+      /*       const isLoggedIn = !!auth?.user;
+      const isOnDashboard = nextUrl.pathname.startsWith('/');
+      if (isOnDashboard) {
+        if (isLoggedIn) return true;
+        return false; // Redirect unauthenticated users to login page
+      } else if (isLoggedIn) {
+        return Response.redirect(new URL('/', nextUrl));
+      } */
+      return true;
+    },
   },
 
   providers: [

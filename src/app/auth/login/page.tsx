@@ -1,4 +1,4 @@
-import { LoginForm } from '@/components/auth';
+import { LoginForm } from '@/components';
 import { globalFont } from '@/config/fonts';
 
 export default function Login() {

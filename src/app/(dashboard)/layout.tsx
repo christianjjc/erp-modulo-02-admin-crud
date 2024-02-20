@@ -1,5 +1,4 @@
-import { Footer } from '@/components';
-import { MainMenu } from '@/components/ui/mainmenu/MainMenu';
+import { Footer, Header } from '@/components';
 
 export default function RootLayout({
   children,
@@ -8,14 +7,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <header>
-        LAyout Dashboard
-        <MainMenu />
-      </header>
+      <Header />
       <main>{children}</main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }
