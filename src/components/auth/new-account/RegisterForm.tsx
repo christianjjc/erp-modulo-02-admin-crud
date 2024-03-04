@@ -75,7 +75,7 @@ export const RegisterForm = () => {
       </div>
 
       <Link href="/auth/login" className="btn-secondary text-center">
-        Ingresar
+        Volver al login
       </Link>
     </form>
   );

@@ -22,20 +22,21 @@ export const LoginForm = () => {
   return (
     <form action={dispatch} className="flex flex-col">
       <label htmlFor="email">Correo electrónico</label>
-      <input className="px-5 py-2 border bg-gray-200 rounded mb-5" type="email" name="email" />
+      <input className="px-5 py-2 border bg-gray-200 rounded mb-5" type="email" name="email" autoFocus />
 
       <label htmlFor="password">Contraseña</label>
       <input className="px-5 py-2 border bg-gray-200 rounded mb-5" type="password" name="password" />
 
       <LoginButton />
-      <div className="flex h-8 items-end space-x-1" aria-live="polite" aria-atomic="true">
-        {state && (
-          <>
+
+      {state && (
+        <>
+          <div className="flex h-8 items-end space-x-1" aria-live="polite" aria-atomic="true">
             <IoInformationCircle className="h-5 w-5 text-red-500" />
-            <p className="text-sm text-red-500">{state}</p>
-          </>
-        )}
-      </div>
+            <span className="text-sm text-red-500">{state}</span>
+          </div>
+        </>
+      )}
 
       {/* divisor l ine */}
       <div className="flex items-center my-5">
@@ -45,7 +46,7 @@ export const LoginForm = () => {
       </div>
 
       <Link href="/auth/new-account" className="btn-secondary text-center">
-        Crear una nueva cuenta
+        Crear una cuenta
       </Link>
     </form>
   );

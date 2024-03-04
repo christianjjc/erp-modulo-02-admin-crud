@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <>
       <header>LAyout Autenticacion</header>
       <main className="flex justify-center">
-        <div className="w-full sm:w-[350px] px-10">{children}</div>
+        <div className="w-full sm:w-[500px] px-10">{children}</div>
       </main>
       <footer>Pie de pagina</footer>
     </>
