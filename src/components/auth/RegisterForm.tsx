@@ -3,9 +3,10 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Link from 'next/link';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { login, registerUser } from '@/actions';
 import clsx from 'clsx';
+import { Spinner } from '..';
 
 type FormInputs = {
   name: string;
@@ -15,6 +16,7 @@ type FormInputs = {
 
 export const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
+  const [pending, setPending] = useState(false);
 
   const {
     register,
@@ -23,6 +25,7 @@ export const RegisterForm = () => {
   } = useForm<FormInputs>();
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    setPending(true);
     setErrorMessage('');
     const { name, email, password } = data;
     // Server Action
@@ -34,6 +37,8 @@ export const RegisterForm = () => {
     await login(email.toLowerCase(), password);
     window.location.replace('/profile');
   };
+
+  //useEffect(() => {}, [pending]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
@@ -53,6 +58,7 @@ export const RegisterForm = () => {
           'border-red-500': errors.email,
         })}
         type="email"
+        autoComplete="username"
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
       />
 
@@ -62,11 +68,12 @@ export const RegisterForm = () => {
           'border-red-500': errors.password,
         })}
         type="password"
+        autoComplete="current-password"
         {...register('password', { required: true, minLength: 6 })}
       />
       <span className="text-red-500">{errorMessage} </span>
+      {pending ? <Spinner /> : ''}
       <button className="btn-primary">Crear cuenta</button>
-
       {/* divisor l ine */}
       <div className="flex items-center my-5">
         <div className="flex-1 border-t border-gray-500"></div>

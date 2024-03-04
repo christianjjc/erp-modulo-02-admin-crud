@@ -3,6 +3,7 @@
 //import './globals.css';
 
 import { auth } from '@/auth.config';
+import { Footer } from '@/components';
 import { redirect } from 'next/navigation';
 
 //const inter = Inter({ subsets: ["latin"] });
@@ -22,11 +23,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <>
-      <header>LAyout Autenticacion</header>
+      <header></header>
       <main className="flex justify-center">
         <div className="w-full sm:w-[500px] px-10">{children}</div>
       </main>
-      <footer>Pie de pagina</footer>
+      <footer></footer>
     </>
   );
 }
