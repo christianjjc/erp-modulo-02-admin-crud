@@ -1,13 +1,13 @@
 # Proyecto ERP
 
-## Módulo 01:
+## Módulo 02:
 
-- Autenticación de Usuarios
+- Módulo de Administración - CRUD de entidades
 
 ### 1. Secciones del Proyecto (Alcance):
 
-- Login y Registro de Usuarios.
-- Pantalla inicial una vez realizada la autenticación y la autorización.
+- CRUD de entidades en módulo de Administración.
+- Usuarios, Parámetros Iniciales (laboral), Entidades Necesarias.
 
 ### 2. Librerías y Componentes Necesarios:
 
@@ -28,7 +28,7 @@
 - Copie la siguiente instrucción y péguelo en la terminal que use (Gitbash, cmd, VsCode).
 
 ```bash
-git clone https://github.com/christianjjc/erp-modulo-01-autenticacion.git
+git clone https://github.com/christianjjc/erp-modulo-02-admin-crud.git
 ```
 
 #### 3.2 Instalamos todas las dependencias del proyecto:
