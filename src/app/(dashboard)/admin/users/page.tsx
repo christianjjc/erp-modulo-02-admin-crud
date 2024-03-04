@@ -1,7 +1,9 @@
+import { Title } from '@/components';
+
 export default function UsersPage() {
   return (
-    <div>
-      <h1>Users Page</h1>
-    </div>
+    <section>
+      <Title title="Listado de Usuarios" subtitle="En esta página se encuentra el listado de usuarios" />
+    </section>
   );
 }
