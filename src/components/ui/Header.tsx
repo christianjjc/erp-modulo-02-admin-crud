@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainMenu } from '../mainmenu/MainMenu';
+import { MainMenu } from './MainMenu';
 
 export const Header = () => {
   return (
