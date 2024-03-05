@@ -19,25 +19,26 @@ export const SidebarItem = ({ tipo, icon, path, title, permisos, onclick }: Prop
   const { data: session } = useSession();
   const userRoles = session?.user?.role ?? 'client';
 
-  if (tipo === 't') {
-    return (
-      <li>
-        <div className="px-4 py-3 flex items-center space-x-4 rounded-xl ">
-          {icon}
-          <span className="-mr-1 font-medium">{title}</span>
-        </div>
-      </li>
-    );
-  } else if (tipo === 's') {
-    return (
-      <li>
-        <div className="px-4 py-3 flex items-center space-x-4 rounded-xl ">
-          {icon} <span className="-mr-1 font-medium">{title}</span>
-        </div>
-      </li>
-    );
-  } else if (tipo === 'm') {
-    if (permisos.includes(userRoles)) {
+  if (permisos.includes(userRoles)) {
+    if (tipo === 't') {
+      return (
+        <li>
+          <div className="px-4 py-3 flex items-center space-x-4 rounded-xl ">
+            {icon}
+            <span className="-mr-1 font-medium">{title}</span>
+          </div>
+        </li>
+      );
+    } else if (tipo === 's') {
+      return (
+        <li>
+          <div className="px-4 py-3 flex items-center space-x-4 rounded-xl ">
+            {icon} <span className="-mr-1 font-medium">{title}</span>
+          </div>
+        </li>
+      );
+    } else if (tipo === 'm') {
+      //if (permisos.includes(userRoles)) {
       return (
         <li>
           <Link
@@ -52,6 +53,7 @@ export const SidebarItem = ({ tipo, icon, path, title, permisos, onclick }: Prop
           </Link>
         </li>
       );
+      //}
     }
   }
 };

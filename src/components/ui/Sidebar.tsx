@@ -34,7 +34,7 @@ const menuItems = [
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
-    permisos: [],
+    permisos: ['super'],
   },
   {
     tipo: 'm',
@@ -55,14 +55,14 @@ const menuItems = [
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
-    permisos: [],
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 't',
     icon: <IoListOutline />,
     path: '',
     title: 'Mantenimientos',
-    permisos: [],
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 'm',
@@ -90,7 +90,7 @@ const menuItems = [
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
-    permisos: [],
+    permisos: ['super', 'admin'],
   },
 ];
 

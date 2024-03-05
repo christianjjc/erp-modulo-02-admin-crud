@@ -28,13 +28,6 @@ export const MainMenu = () => {
         </Link>
       )}
 
-      {isSuper && (
-        <Link href="/admin/users" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
-          <IoBookOutline size={15} />
-          <span className="ml-3 text-xl">Usuarios</span>
-        </Link>
-      )}
-
       {!isAutehnticated && (
         <Link href="/auth/login" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
           <IoLogInOutline size={15} />
