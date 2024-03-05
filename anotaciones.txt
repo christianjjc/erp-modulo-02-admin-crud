@@ -1,0 +1,19 @@
+Paleta de colores:
+- Azul Marino (#0F4C81):
+El azul marino transmite confianza, seguridad y estabilidad. Es un color excelente para la marca principal
+y para elementos que necesiten resaltar, como el encabezado del sistema o botones de acción importantes.
+
+- Gris Oscuro (#404040):
+El gris oscuro es un color neutral que se asocia con profesionalismo y modernidad. Puede usarse para áreas de texto, 
+fondos y elementos que necesiten destacarse sin ser demasiado llamativos.
+
+- Blanco (#FFFFFF) y Negro (#000000): 
+El blanco y el negro son colores básicos pero esenciales en cualquier paleta.
+El blanco se puede utilizar para espacios en blanco y áreas de respiro, mientras que el negro puede utilizarse para texto y elementos de contraste.
+
+- Verde Oliva (#738F6E): 
+El verde oliva puede representar eficiencia, crecimiento y sostenibilidad. Puede ser utilizado para resaltar áreas 
+relacionadas con procesos eficientes, análisis de datos y áreas de éxito dentro del sistema.
+
+- Naranja Oscuro (#C05621): El naranja oscuro es un color cálido y enérgico que puede agregar un toque de vitalidad al diseño.
+Se puede utilizar para resaltar áreas de importancia o para llamar la atención sobre características clave del sistema.

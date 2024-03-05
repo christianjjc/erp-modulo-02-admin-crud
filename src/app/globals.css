@@ -6,6 +6,17 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background-bg-title: #0F4C81;
+  --glb-main-color-a: #0F4C81;
+  --glb-main-color-b: #404040;
+  --glb-main-color-c: #738F6E;
+  --glb-main-color-d: #C05621;
+
+  --glb-main-color-a-hover: #135fa0;
+  --glb-main-color-b-hover: #636262;
+  --glb-main-color-c-hover: #8bac85;
+  --glb-main-color-d-hover: #dd6428;
+
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -36,6 +47,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -45,6 +57,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -61,11 +74,11 @@ body {
 }
 
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded transition-all;
+  @apply bg-primary-color hover:bg-primary-color-hover text-white py-2 px-4 rounded transition-all;
 }
 
 .btn-secondary {
-  @apply bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded transition-all;
+  @apply bg-secondary-color hover:bg-secondary-color-hover text-white py-2 px-4 rounded transition-all;
 }
 
 .pie-pagina span {

@@ -1,10 +1,13 @@
-export * from './ui/title/Title';
-export * from './ui/not-found/PageNotFound';
-export * from './ui/footer/Footer';
-export * from './ui/header/Header';
-export * from './ui/logoutbutton/LogOutButton';
+export * from './ui/Title';
+export * from './ui/PageNotFound';
+export * from './ui/Footer';
+export * from './ui/Header';
+export * from './ui/LogOutButton';
+export * from './ui/Spinner';
+export * from './ui/Sidebar';
+export * from './ui/SidebarItem';
 
 export * from './providers/Providers';
 
-export * from './auth/login/LoginForm';
-export * from './auth/new-account/RegisterForm';
+export * from './auth/LoginForm';
+export * from './auth/RegisterForm';

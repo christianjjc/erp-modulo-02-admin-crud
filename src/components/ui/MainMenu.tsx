@@ -1,6 +1,8 @@
 'use client';
 
 import { logout } from '@/actions';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { toggleSideMenu } from '@/store/sidebar-slice';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
@@ -8,16 +10,14 @@ import { IoBookOutline, IoHomeOutline, IoLogInOutline, IoLogOutOutline, IoPerson
 
 export const MainMenu = () => {
   const { data: session } = useSession();
-
   const isAutehnticated = !!session?.user;
-
   const isSuper = session?.user.role === 'super';
 
-  /*   const isAdmin = session?.user.role === 'admin';
+  const dispatch = useAppDispatch();
 
-  const isUser = session?.user.role === 'user';
-
-  const isClient = session?.user.role === 'client'; */
+  const fnOpenMenu = () => {
+    dispatch(toggleSideMenu(true));
+  };
 
   return (
     <nav className="flex justify-center">
@@ -39,18 +39,10 @@ export const MainMenu = () => {
           <span className="ml-3 text-xl">LogIn</span>
         </Link>
       )}
-      {isAutehnticated && (
-        <>
-          <Link href="/profile" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
-            <IoPersonOutline size={15} />
-            <span className="ml-3 text-xl">Perfil</span>
-          </Link>
-          <button onClick={() => logout()} className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
-            <IoLogOutOutline size={15} />
-            <span className="ml-3 text-xl">Salir</span>
-          </button>
-        </>
-      )}
+
+      <button onClick={fnOpenMenu} className="m-2 p-2 rounded-md trnasition-all hover:bg-gray-100">
+        Menú
+      </button>
     </nav>
   );
 };
