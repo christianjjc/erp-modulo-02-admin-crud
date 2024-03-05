@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/components';
+import { Footer, Header, Sidebar } from '@/components';
 
 export default function RootLayout({
   children,
