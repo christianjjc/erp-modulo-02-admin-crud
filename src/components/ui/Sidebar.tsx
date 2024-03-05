@@ -64,7 +64,7 @@ export const Sidebar = () => {
 
       <nav
         //todo: efecto de slide
-        className={clsx('w-full fixed p-5 right-0 top-0 md:w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300', {
+        className={clsx(' fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300', {
           'translate-x-full': !isSideMenuOpen,
         })}>
         <IoCloseOutline size={50} className="absolute top-5 right-5 cursor-pointer" onClick={fnCloseMenu} />
