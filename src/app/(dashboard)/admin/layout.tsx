@@ -7,9 +7,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   if (!session?.user) return redirect('/');
 
-  if (session?.user.role === 'user') redirect('/');
-
-  if (session?.user.role === 'client') redirect('/');
+  /* if (session?.user.role === 'user') redirect('/admin/profile');
+  if (session?.user.role === 'client') redirect('/admin/profile'); */
 
   return (
     <>

@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { auth } from '@/auth.config';
 import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoPersonOutline } from 'react-icons/io5';
 import { LogOutButton, SidebarItem } from '@/components';
-import { redirect } from 'next/navigation';
 
 const menuItems = [
   {
@@ -12,29 +12,14 @@ const menuItems = [
     title: 'Dashboard',
   },
   {
+    icon: <IoPersonOutline />,
+    path: '/admin/profile',
+    title: 'Perfil',
+  },
+  {
     icon: <IoCheckboxOutline />,
     path: '/admin/users',
-    title: 'Rest - Todos',
-  },
-  {
-    icon: <IoListOutline />,
-    path: '/dashboard/server-todos',
-    title: 'Server Actions',
-  },
-  {
-    icon: <IoCodeWorkingOutline />,
-    path: '/dashboard/cookies',
-    title: 'Cookies',
-  },
-  {
-    icon: <IoBasketOutline />,
-    path: '/dashboard/products',
-    title: 'Productos',
-  },
-  {
-    icon: <IoPersonOutline />,
-    path: '/profile',
-    title: 'Perfil',
+    title: 'Usuarios',
   },
 ];
 
@@ -70,7 +55,6 @@ export const Sidebar = async () => {
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">
-          {/* Active className: text-white bg-gradient-to-r from-sky-600 to-cyan-400 */}
           {menuItems.map((el) => (
             <SidebarItem key={el.path} {...el} />
           ))}

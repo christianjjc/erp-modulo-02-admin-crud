@@ -41,7 +41,7 @@ export const MainMenu = () => {
       )}
       {isAutehnticated && (
         <>
-          <Link href="/profile" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
+          <Link href="/admin/profile" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
             <IoPersonOutline size={15} />
             <span className="ml-3 text-xl">Perfil</span>
           </Link>

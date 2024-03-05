@@ -35,7 +35,7 @@ export const RegisterForm = () => {
       return;
     }
     await login(email.toLowerCase(), password);
-    window.location.replace('/profile');
+    window.location.replace('/admin/profile');
   };
 
   //useEffect(() => {}, [pending]);
