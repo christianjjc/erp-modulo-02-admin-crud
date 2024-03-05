@@ -3,36 +3,84 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
+  IoApps,
+  IoArchive,
   IoBasketOutline,
   IoCalendarOutline,
   IoCheckboxOutline,
   IoCloseOutline,
   IoCodeWorkingOutline,
+  IoConstructOutline,
   IoListOutline,
+  IoPeople,
   IoPersonOutline,
 } from 'react-icons/io5';
-import { LogOutButton, SidebarItem } from '@/components';
+import { LogOutButton, Separator, SidebarItem } from '@/components';
 import { useSession } from 'next-auth/react';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { toggleSideMenu } from '@/store/sidebar-slice';
-import { useEffect } from 'react';
 import clsx from 'clsx';
 
 const menuItems = [
   {
-    icon: <IoCalendarOutline />,
-    path: '/admin',
-    title: 'Dashboard',
+    tipo: 'm',
+    icon: <IoConstructOutline />,
+    path: '/config',
+    title: 'Configuración',
   },
   {
+    tipo: 's',
+    icon: <div className="w-full h-px bg-gray-200" />,
+    path: '',
+    title: '',
+  },
+  {
+    tipo: 'm',
+    icon: <IoCalendarOutline />,
+    path: '/admin',
+    title: 'Admin Dashboard',
+  },
+  {
+    tipo: 'm',
     icon: <IoPersonOutline />,
     path: '/admin/profile',
     title: 'Perfil',
   },
   {
-    icon: <IoCheckboxOutline />,
+    tipo: 's',
+    icon: <div className="w-full h-px bg-gray-200" />,
+    path: '',
+    title: '',
+  },
+  {
+    tipo: 't',
+    icon: <IoListOutline />,
+    path: '',
+    title: 'Mantenimientos',
+  },
+  {
+    tipo: 'm',
+    icon: <IoPeople />,
     path: '/admin/users',
     title: 'Usuarios',
+  },
+  {
+    tipo: 'm',
+    icon: <IoApps />,
+    path: '/admin/enterprises',
+    title: 'Empresas',
+  },
+  {
+    tipo: 'm',
+    icon: <IoArchive />,
+    path: '/admin/products',
+    title: 'Productos',
+  },
+  {
+    tipo: 's',
+    icon: <div className="w-full h-px bg-gray-200" />,
+    path: '',
+    title: '',
   },
 ];
 
@@ -49,23 +97,19 @@ export const Sidebar = () => {
     dispatch(toggleSideMenu(false));
   };
 
-  //useEffect(() => {}, [isSideMenuOpen]);
-
-  //{/* <nav className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]"> */}
-
   return (
     <>
       {isSideMenuOpen && (
         <>
-          <div className="bg-black fixed top-0 left-0 w-screen h-screen z-10 opacity-30" />
-          <div onClick={fnCloseMenu} className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm" />
+          <div className="bg-black fixed top-0 left-0 w-screen h-screen z-40 opacity-30" />
+          <div onClick={fnCloseMenu} className="fade-in fixed top-0 left-0 w-screen h-screen z-40 backdrop-filter backdrop-blur-sm" />
         </>
       )}
 
       <nav
         //todo: efecto de slide
-        className={clsx(' fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300', {
-          'translate-x-full': !isSideMenuOpen,
+        className={clsx('fixed w-full p-5 left-0 top-0 md:w-[400px] h-screen bg-white z-50 shadow-2xl transform transition-all duration-300', {
+          '-translate-x-full': !isSideMenuOpen,
         })}>
         <IoCloseOutline size={50} className="absolute top-5 right-5 cursor-pointer" onClick={fnCloseMenu} />
         <div>
@@ -85,17 +129,16 @@ export const Sidebar = () => {
             <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{userName}</h5>
             <span className="hidden text-gray-400 lg:block">{userRoles}</span>
           </div>
-          <ul className="space-y-2 tracking-wide mt-8">
-            {menuItems.map((el) => (
-              <SidebarItem key={el.path} {...el} />
-            ))}
-          </ul>
-          <button className="btn-primary " onClick={fnCloseMenu}>
-            cerrar menu
-          </button>
-        </div>
-        <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-          <LogOutButton />
+          <div>
+            <ul className="space-y-2 tracking-wide mt-8">
+              {menuItems.map((el) => (
+                <SidebarItem key={el.path} tipo={el.tipo} icon={el.icon} path={el.path} title={el.title} onclick={fnCloseMenu} />
+              ))}
+            </ul>
+          </div>
+          <div className="px-6 -mx-6 pt-4 flex justify-between items-center">
+            <LogOutButton />
+          </div>
         </div>
       </nav>
     </>

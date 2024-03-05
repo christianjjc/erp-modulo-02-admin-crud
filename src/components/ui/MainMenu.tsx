@@ -21,10 +21,12 @@ export const MainMenu = () => {
 
   return (
     <nav className="flex justify-center">
-      <Link href="/" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
-        <IoHomeOutline size={15} />
-        <span className="ml-3 text-xl">Home</span>
-      </Link>
+      {!isAutehnticated && (
+        <Link href="/" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
+          <IoHomeOutline size={15} />
+          <span className="ml-3 text-xl">Home</span>
+        </Link>
+      )}
 
       {isSuper && (
         <Link href="/admin/users" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
@@ -40,9 +42,11 @@ export const MainMenu = () => {
         </Link>
       )}
 
-      <button onClick={fnOpenMenu} className="m-2 p-2 rounded-md trnasition-all hover:bg-gray-100">
-        Menú
-      </button>
+      {isAutehnticated && (
+        <button onClick={fnOpenMenu} className="m-2 p-2 rounded-md trnasition-all hover:bg-gray-100">
+          Menú
+        </button>
+      )}
     </nav>
   );
 };

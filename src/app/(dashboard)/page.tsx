@@ -1,6 +1,15 @@
+import { auth } from '@/auth.config';
 import { Title } from '@/components';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
+  if (session?.user) {
+    //redirect('/auth/login');
+    redirect('/admin');
+  }
+
   return (
     <section className="flex flex-col center items-center">
       <Title title="Página de Inicio" subtitle="Esta será la pantalla inicial del WebSite o de la WebApp" />

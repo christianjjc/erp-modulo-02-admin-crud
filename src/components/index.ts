@@ -6,6 +6,7 @@ export * from './ui/LogOutButton';
 export * from './ui/Spinner';
 export * from './ui/Sidebar';
 export * from './ui/SidebarItem';
+export * from './ui/Separator';
 
 export * from './providers/Providers';
 
