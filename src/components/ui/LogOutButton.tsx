@@ -1,6 +1,7 @@
 'use client';
 
 import { logout } from '@/actions';
+import { redirect } from 'next/navigation';
 import React from 'react';
 import { CiLogout } from 'react-icons/ci';
 

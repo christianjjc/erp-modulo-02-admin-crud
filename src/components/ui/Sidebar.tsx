@@ -27,60 +27,70 @@ const menuItems = [
     icon: <IoConstructOutline />,
     path: '/config',
     title: 'Configuración',
+    permisos: ['super'],
   },
   {
     tipo: 's',
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
+    permisos: [],
   },
   {
     tipo: 'm',
     icon: <IoCalendarOutline />,
     path: '/admin',
     title: 'Admin Dashboard',
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 'm',
     icon: <IoPersonOutline />,
     path: '/admin/profile',
     title: 'Perfil',
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 's',
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
+    permisos: [],
   },
   {
     tipo: 't',
     icon: <IoListOutline />,
     path: '',
     title: 'Mantenimientos',
+    permisos: [],
   },
   {
     tipo: 'm',
     icon: <IoPeople />,
     path: '/admin/users',
     title: 'Usuarios',
+    permisos: ['super'],
   },
   {
     tipo: 'm',
     icon: <IoApps />,
     path: '/admin/enterprises',
     title: 'Empresas',
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 'm',
     icon: <IoArchive />,
     path: '/admin/products',
     title: 'Productos',
+    permisos: ['super', 'admin'],
   },
   {
     tipo: 's',
     icon: <div className="w-full h-px bg-gray-200" />,
     path: '',
     title: '',
+    permisos: [],
   },
 ];
 
@@ -131,8 +141,8 @@ export const Sidebar = () => {
           </div>
           <div>
             <ul className="space-y-2 tracking-wide mt-8">
-              {menuItems.map((el) => (
-                <SidebarItem key={el.path} tipo={el.tipo} icon={el.icon} path={el.path} title={el.title} onclick={fnCloseMenu} />
+              {menuItems.map((el, i = 0) => (
+                <SidebarItem key={i++} {...el} onclick={fnCloseMenu} />
               ))}
             </ul>
           </div>

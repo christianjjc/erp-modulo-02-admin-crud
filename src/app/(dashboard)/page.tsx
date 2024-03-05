@@ -5,10 +5,10 @@ import { redirect } from 'next/navigation';
 export default async function Home() {
   const session = await auth();
 
-  if (session?.user) {
+  /*  if (session?.user) {
     //redirect('/auth/login');
     redirect('/admin');
-  }
+  } */
 
   return (
     <section className="flex flex-col center items-center">

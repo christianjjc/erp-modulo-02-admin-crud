@@ -9,14 +9,15 @@ interface Props {
   icon: React.ReactNode;
   path: string;
   title: string;
+  permisos: string[];
   onclick: () => void;
 }
 
-export const SidebarItem = ({ tipo, icon, path, title, onclick }: Props) => {
+export const SidebarItem = ({ tipo, icon, path, title, permisos, onclick }: Props) => {
   const pathName = usePathname();
 
   const { data: session } = useSession();
-  const userRoles = session!.user.role ?? ['client'];
+  const userRoles = session?.user?.role ?? 'client';
 
   if (tipo === 't') {
     return (
@@ -36,19 +37,21 @@ export const SidebarItem = ({ tipo, icon, path, title, onclick }: Props) => {
       </li>
     );
   } else if (tipo === 'm') {
-    return (
-      <li>
-        <Link
-          onClick={onclick}
-          href={path}
-          className={`px-4 py-3 flex items-center space-x-4 rounded-xl 
-            hover:bg-gradient-to-r hover:bg-sky-600 hover:text-white 
-            ${path === pathName ? `text-white bg-gradient-to-r from-sky-600 to-cyan-400` : ''}
-            `}>
-          {icon}
-          <span className="-mr-1 font-medium">{title}</span>
-        </Link>
-      </li>
-    );
+    if (permisos.includes(userRoles)) {
+      return (
+        <li>
+          <Link
+            onClick={onclick}
+            href={path}
+            className={`px-4 py-3 flex items-center space-x-4 rounded-xl 
+              hover:bg-gradient-to-r hover:bg-sky-600 hover:text-white 
+              ${path === pathName ? `text-white bg-gradient-to-r from-sky-600 to-cyan-400` : ''}
+              `}>
+            {icon}
+            <span className="-mr-1 font-medium">{title}</span>
+          </Link>
+        </li>
+      );
+    }
   }
 };
