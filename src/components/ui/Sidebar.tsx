@@ -12,6 +12,8 @@ import {
   IoCodeWorkingOutline,
   IoConstructOutline,
   IoListOutline,
+  IoLogIn,
+  IoLogInOutline,
   IoPeople,
   IoPersonOutline,
 } from 'react-icons/io5';
@@ -115,30 +117,32 @@ export const Sidebar = () => {
           <div onClick={fnCloseMenu} className="fade-in fixed top-0 left-0 w-screen h-screen z-40 backdrop-filter backdrop-blur-sm" />
         </>
       )}
-
       <nav
         //todo: efecto de slide
-        className={clsx('fixed w-full p-5 left-0 top-0 md:w-[400px] h-screen bg-white z-50 shadow-2xl transform transition-all duration-300', {
+        className={clsx('fixed w-[300px] p-5 left-0 top-0 sm:w-[500px] h-screen bg-white z-50 shadow-2xl transform transition-all duration-300', {
           '-translate-x-full': !isSideMenuOpen,
         })}>
-        <IoCloseOutline size={50} className="absolute top-5 right-5 cursor-pointer" onClick={fnCloseMenu} />
+        <IoCloseOutline size={50} className="absolute top-5 right-5 cursor-pointer transition-all hover:bg-gray-100" onClick={fnCloseMenu} />
         <div>
-          <div className="-mx-6 px-6 py-4">
-            <Link href="#" title="home">
-              <Image
-                src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg"
-                className="w-32"
-                alt="tailus logo"
-                width={32}
-                height={200}
-              />
+          {!session ? (
+            <Link href="/auth/login" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all" onClick={fnCloseMenu}>
+              <IoLogIn size={15} />
+              <span className="ml-3 text-xl">Iniciar Sesión</span>
             </Link>
-          </div>
-          <div className="mt-8 text-center">
-            <Image src={avatarUrl} alt="" className="w-28 h-28 m-auto rounded-full object-cover " width={100} height={100} />
-            <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{userName}</h5>
-            <span className="hidden text-gray-400 lg:block">{userRoles}</span>
-          </div>
+          ) : (
+            <>
+              <div className="-mx-6 px-6 py-4">
+                {/* <Link href="#" title="home"> */}
+                <img src="/logo-cjjc.png" className="w-24" alt="cjjc logo" />
+                {/* </Link> */}
+              </div>
+              <div className="mt-8 text-center">
+                <Image src={avatarUrl} alt="" className="w-28 h-28 m-auto rounded-full object-cover " width={100} height={100} />
+                <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{userName}</h5>
+                <span className="hidden text-gray-400 lg:block">{userRoles}</span>
+              </div>
+            </>
+          )}
           <div>
             <ul className="space-y-2 tracking-wide mt-8">
               {menuItems.map((el, i = 0) => (
@@ -146,9 +150,11 @@ export const Sidebar = () => {
               ))}
             </ul>
           </div>
-          <div className="px-6 -mx-6 pt-4 flex justify-between items-center">
-            <LogOutButton />
-          </div>
+          {session && (
+            <div className="px-6 -mx-6 pt-4 flex justify-between items-center">
+              <LogOutButton />
+            </div>
+          )}
         </div>
       </nav>
     </>

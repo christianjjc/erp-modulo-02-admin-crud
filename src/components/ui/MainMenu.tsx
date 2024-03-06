@@ -1,16 +1,14 @@
 'use client';
 
-import { logout } from '@/actions';
-import { useAppDispatch, useAppSelector } from '@/store';
+import { useAppDispatch } from '@/store';
 import { toggleSideMenu } from '@/store/sidebar-slice';
 import { useSession } from 'next-auth/react';
-import Link from 'next/link';
 import React from 'react';
-import { IoBookOutline, IoHomeOutline, IoLogInOutline, IoLogOutOutline, IoPersonOutline } from 'react-icons/io5';
+import { IoMenuSharp } from 'react-icons/io5';
 
 export const MainMenu = () => {
   const { data: session } = useSession();
-  const isAutehnticated = !!session?.user;
+  const isAuthenticated = !!session?.user;
   const isSuper = session?.user.role === 'super';
 
   const dispatch = useAppDispatch();
@@ -20,26 +18,17 @@ export const MainMenu = () => {
   };
 
   return (
-    <nav className="flex justify-center">
-      {!isAutehnticated && (
+    <nav className="flex">
+      {/*       {!isAuthenticated && (
         <Link href="/" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
           <IoHomeOutline size={15} />
           <span className="ml-3 text-xl">Home</span>
         </Link>
-      )}
+      )} */}
 
-      {!isAutehnticated && (
-        <Link href="/auth/login" className="flex items-center p-2 hover:bg-gray-100 rounded transition-all">
-          <IoLogInOutline size={15} />
-          <span className="ml-3 text-xl">LogIn</span>
-        </Link>
-      )}
-
-      {isAutehnticated && (
-        <button onClick={fnOpenMenu} className="m-2 p-2 rounded-md trnasition-all hover:bg-gray-100">
-          Menú
-        </button>
-      )}
+      <button onClick={fnOpenMenu} className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
+        <IoMenuSharp size={25} />
+      </button>
     </nav>
   );
 };

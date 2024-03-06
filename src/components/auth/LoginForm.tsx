@@ -16,7 +16,7 @@ export const LoginForm = () => {
     if (state === 'Success') {
       //router.refresh();
       //router.replace("/");
-      window.location.replace('/');
+      window.location.replace('/admin');
     }
   }, [state]);
 
