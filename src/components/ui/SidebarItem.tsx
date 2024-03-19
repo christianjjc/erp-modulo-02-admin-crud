@@ -38,9 +38,8 @@ export const SidebarItem = ({ tipo, icon, path, title, permisos, onclick }: Prop
         </li>
       );
     } else if (tipo === 'm') {
-      //if (permisos.includes(userRoles)) {
       return (
-        <li>
+        <li className="ps-8">
           <Link
             onClick={onclick}
             href={path}

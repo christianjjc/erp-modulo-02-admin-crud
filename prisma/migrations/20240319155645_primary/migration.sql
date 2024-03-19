@@ -6,7 +6,7 @@ CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "role" "Role" NOT NULL DEFAULT 'user',
+    "role" "Role" NOT NULL DEFAULT 'admin',
     "isActive" BOOLEAN NOT NULL DEFAULT true,
     "email" TEXT NOT NULL,
     "emailVerified" TIMESTAMP(3),

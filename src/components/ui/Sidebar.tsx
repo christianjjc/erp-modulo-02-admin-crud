@@ -25,6 +25,13 @@ import clsx from 'clsx';
 
 const menuItems = [
   {
+    tipo: 't',
+    icon: <IoListOutline />,
+    path: '',
+    title: 'Generales',
+    permisos: ['super', 'admin'],
+  },
+  {
     tipo: 'm',
     icon: <IoConstructOutline />,
     path: '/config',
@@ -68,13 +75,6 @@ const menuItems = [
   },
   {
     tipo: 'm',
-    icon: <IoPeople />,
-    path: '/admin/users',
-    title: 'Usuarios',
-    permisos: ['super'],
-  },
-  {
-    tipo: 'm',
     icon: <IoApps />,
     path: '/admin/enterprises',
     title: 'Empresas',
@@ -82,11 +82,18 @@ const menuItems = [
   },
   {
     tipo: 'm',
+    icon: <IoPeople />,
+    path: '/admin/users',
+    title: 'Usuarios',
+    permisos: ['super', 'admin'],
+  },
+  /*   {
+    tipo: 'm',
     icon: <IoArchive />,
     path: '/admin/products',
     title: 'Productos',
     permisos: ['super', 'admin'],
-  },
+  }, */
   {
     tipo: 's',
     icon: <div className="w-full h-px bg-gray-200" />,
@@ -119,7 +126,7 @@ export const Sidebar = () => {
       )}
       <nav
         //todo: efecto de slide
-        className={clsx('fixed w-[300px] p-5 left-0 top-0 sm:w-[500px] h-screen bg-white z-50 shadow-2xl transform transition-all duration-300', {
+        className={clsx('fixed w-[300px] p-5 left-0 top-0 sm:w-[400px] h-screen bg-white z-50 shadow-2xl transform transition-all duration-300', {
           '-translate-x-full': !isSideMenuOpen,
         })}>
         <IoCloseOutline size={50} className="absolute top-5 right-5 cursor-pointer transition-all hover:bg-gray-100" onClick={fnCloseMenu} />
@@ -133,7 +140,7 @@ export const Sidebar = () => {
             <>
               <div className="-mx-6 px-6 py-4">
                 {/* <Link href="#" title="home"> */}
-                <img src="/logo-cjjc.png" className="w-24" alt="cjjc logo" />
+                <Image src="/logo-cjjc.png" width={100} height={100} alt="cjjc logo" style={{ height: 'auto' }} />
                 {/* </Link> */}
               </div>
               <div className="mt-8 text-center">
