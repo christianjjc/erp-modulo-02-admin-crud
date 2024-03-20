@@ -26,5 +26,27 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   image         String?
-  //@@index([role])
+  Company       Company[]
+
+  @@index([role])
+}
+
+model Company {
+  id             String       @id @default(uuid())
+  companyName    String
+  ruc            String
+  //relaciones
+  IndustryTipe   IndustryType @relation(fields: [industryTypeId], references: [id])
+  industryTypeId Int
+  User           User         @relation(fields: [userId], references: [id])
+  userId         String
+
+  @@index([ruc])
+}
+
+model IndustryType {
+  id      Int       @id @default(autoincrement())
+  name    String
+  //relaciones
+  Company Company[]
 }

@@ -6,8 +6,19 @@ interface SeedUser {
   role: 'super' | 'admin' | 'user' | 'client';
 }
 
+interface SeedIndustryType {
+  name: string;
+}
+
+interface SeedCompany {
+  name: string;
+  ruc: string;
+}
+
 interface SeedData {
   users: SeedUser[];
+  industryTypes: SeedIndustryType[];
+  companies: SeedCompany[];
 }
 
 export const initialData: SeedData = {
@@ -35,6 +46,15 @@ export const initialData: SeedData = {
       email: 'client1@erp.com',
       password: bcryptjs.hashSync('123456'),
       role: 'client',
+    },
+  ],
+
+  industryTypes: [{ name: 'Textil' }, { name: 'Construcción' }, { name: 'Bienes Raices' }, { name: 'Alimentaria' }],
+
+  companies: [
+    {
+      name: 'Compañia 01',
+      ruc: '20140475554',
     },
   ],
 };
