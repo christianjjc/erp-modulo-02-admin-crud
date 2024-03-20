@@ -32,24 +32,9 @@ export default async function Home() {
           </thead>
           <tbody>
             <tr>
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">super@erp.com</td>
-              <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">123456</td>
-              <td className="text-sm text-gray-900 font-light px-6 ">super</td>
-            </tr>
-            <tr>
               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">admin@erp.com</td>
               <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">123456</td>
               <td className="text-sm text-gray-900 font-light px-6 ">admin</td>
-            </tr>
-            <tr>
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">user1@erp.com</td>
-              <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">123456</td>
-              <td className="text-sm text-gray-900 font-light px-6 ">user</td>
-            </tr>
-            <tr>
-              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">client1@erp.com</td>
-              <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">123456</td>
-              <td className="text-sm text-gray-900 font-light px-6 ">client</td>
             </tr>
           </tbody>
         </table>
